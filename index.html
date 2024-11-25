@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maschinenverwaltung</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Maschinenverwaltung</h1>
+    </header>
+    <main>
+        
+<form id="machine-form">
+    <div class="parameter">
+        <label for="machine-number">Maschinen Nummer:</label>
+        <input type="text" name="machine-number" placeholder="Maschinen Nummer" required />
+    </div>
+    <div class="parameter">
+        <label for="manufacturer">Maschinenhersteller:</label>
+        <select name="manufacturer" required>
+            <option value="" disabled selected>Wähle Hersteller</option>
+            <option value="Arburg">Arburg</option>
+            <option value="Demag">Demag</option>
+            <option value="Engel">Engel</option>
+        </select>
+    </div>
+    <div class="parameter">
+        <label for="machine-name">Maschinenbezeichnung:</label>
+        <input type="text" name="machine-name" placeholder="Maschinenbezeichnung" pattern="[A-Za-z0-9\s]+" required />
+    </div>
+    <div class="parameter">
+        <label for="max-dosage">Max. Dosiervolumen:</label>
+        <input type="number" name="max-dosage" placeholder="Max. Dosiervolumen" step="0.01" required />
+    </div>
+    <div class="parameter">
+        <label for="closing-force">Schließkraft:</label>
+        <input type="number" name="closing-force" placeholder="Schließkraft" step="0.01" required />
+    </div>
+    <div class="parameter">
+        <label for="hohlm-distanc">Hohlmabstand:</label>
+        <input type="number" name="hohlm-distanc" placeholder="Hohlmabstand" step="0.01" required />
+    </div>
+    <div class="parameter">
+        <label for="min-height">Min. Einbauhöhe:</label>
+        <input type="number" name="min-height" placeholder="Min. Einbauhöhe" step="0.01" required />
+    </div>
+    <div class="parameter">
+        <label for="max-height">Max. Einbauhöhe:</label>
+        <input type="number" name="max-height" placeholder="Max. Einbauhöhe" step="0.01" required />
+    </div>
+    <button type="submit">Daten speichern</button>
+    <button id="download-data">Daten exportieren</button>
+
+</form>
+
+
+        <div id="data-display"></div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
